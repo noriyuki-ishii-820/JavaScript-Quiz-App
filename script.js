@@ -2,13 +2,19 @@
 var startButton = document.getElementById("start");
 var quizQuestions = document.getElementById("quizQuestion");
 var scoreDisplay = document.getElementById("scoreDisplay");
-var finalScore = document.getElementById("finalScore");
 var quizContainer = document.getElementById("quiz-container");
+var submitScore = document.getElementById("submitButton");
+var userName = document.getElementById("userName");
+var finalScore = document.getElementById("finalScore");
 var nextButton = document.getElementById("next");
 var timeScore = document.getElementById("timeScore");
-var slides = document.querySelectorAll(".slide");
+var highScorePage = document.getElementById("highScore");
+var highScoreList = document.getElementsByClassName("highscorelist");
+var goBack = document.getElementById("goBackButton");
+var clearHighscore = document.getElementById("clearHighScoreButton");
+
 var questionIndex = 0;
-var scoreLeft = 101;
+var scoreLeft = 5;
 
 //Question choices
 var optionA = document.getElementById("choiceA");
@@ -19,8 +25,21 @@ var optionD = document.getElementById("choiceD");
 //hide
 quizContainer.style.display="none";
 scoreDisplay.style.display="none";
+highScorePage.style.display="none";
 
 //start quiz
+
+function getQuestion() {
+  
+  let q = questions[questionIndex];
+  quizQuestions.innerHTML = "<p>Question " + (questionIndex+1) + ":" + q.question + "</p>";
+  optionA.innerHTML = q.choiceA;
+  optionB.innerHTML = q.choiceB;
+  optionC.innerHTML = q.choiceC;
+  optionD.innerHTML = q.choiceD;
+  choices.style.display = "block";
+
+}
 
 startButton.addEventListener("click", function () {
   quizContainer.style.display="";
@@ -42,24 +61,12 @@ startButton.addEventListener("click", function () {
   
   beginQuiz();
 
-});
-
-function getQuestion() {
-  
-    let q = questions[questionIndex];
-    quizQuestions.innerHTML = "<p>Question " + (questionIndex+1) + ":" + q.question + "</p>";
-    optionA.innerHTML = q.choiceA;
-    optionB.innerHTML = q.choiceB;
-    optionC.innerHTML = q.choiceC;
-    optionD.innerHTML = q.choiceD;
-    choices.style.display = "block";
-
-}
+})
 
 function beginQuiz(){
     startButton.style.display = "none";
-     getQuestion();
      quizContainer.style.display="block";
+     getQuestion(); 
 }
 
 //show Results
@@ -71,6 +78,57 @@ function showScore(){
   finalScore.textContent = scoreLeft;
 
 }
+
+//submit score
+
+submitScore.addEventListener("click", function() {
+      event.preventDefault();
+     
+      quizContainer.style.display="none";
+      scoreDisplay.style.display="none";
+      highScorePage.style.display="";
+
+      var userNameInput = userName.value;
+      var finalScoreInput = finalScore.value;
+      
+      highScoreList.innerHTML = userNameInput + finalScoreInput;
+
+      //userName and finalScore
+})
+
+// goBack.addEventListener("click", function(event){
+//   event.preventDefault();
+//   window.location.reload();
+// })
+
+//       var scoresArray = defineScoresArray(storedArray, emptyArray);
+
+//       let initials = userName.value;
+
+//       var userAndScore = {
+//           initials: initials,
+//           score: scoreLeft,
+//       };
+
+//       scoresArray.push(userAndScore);
+//       savesScores(Array);
+//       displayAllScores();
+//       goBackButton();
+//   });
+//       highScore.append(userName);
+//       highScore.append()
+
+// }
+
+// var definesScoresArray = (arr1, arr2) => {
+//     if(arr1 !== null) {
+//       return arr1
+//     }  else {
+//       return arr2
+//     }
+
+// }
+    
 
 
 // check whether the answer is correct
@@ -91,22 +149,18 @@ function check (answer) {
     
     if (answer == questions[questionIndex].correctAnswer){  //for the last question
             alert("Correct!");
-            questionIndex++;
             setTimeout(getQuestion,1000);
       } else {
             alert("Incorrect! You lost 10 points!");
-            questionIndex++;
             scoreLeft -= 10;
             setTimeout(getQuestion,1000);
       }
     }
    if (scoreLeft <=  0 || questionIndex == question.length) {
       showScore();
-  };
+  }
 
 }
-
-
 
 
 

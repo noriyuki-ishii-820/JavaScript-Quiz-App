@@ -44,11 +44,21 @@
             <div id="emailSubmit">
                 <form>
                     <label name="name">Enter Initials: </label>
-                    <input type="text" name="name">
-                    <button type="button" class="btn btn-info">Submit Your Score</button>
+                    <input type="text" name="name" id="userName" value="">
+                    <button type="submit" id="submitButton" class="btn btn-info">Submit Your Score</button>
                 </form>
             </div>
         </div>
+        <div id="highScore">
+                <h2>Highscores</h2>
+                <ol>
+                <li class="highscorelist"></li>
+                </ol>
+                <button type="button" id="goBackButton" class="btn btn-primary">Go Back</button>
+                <button type="button" id="clearHighScoreButton" class="btn btn-secondary">Clear Highscores</button>
+        </div>
+
+        
     </div>
 </div>
 
