@@ -1,8 +1,30 @@
 
+var startButton = document.getElementById("start");
 
 
+function showQuestion (){
+
+    alert("hi!");
 
 
+}
+
+
+startButton.addEventListener("click", function(){
+    var intro = document.getElementById("intro");
+    intro.remove();
+
+    var scoreLeft = 101;
+    var scoreDisplay = setInterval(function(){
+        scoreLeft --;
+        document.getElementById("timeScore").textContent = scoreLeft;
+    if(scoreLeft <= 0){
+        clearInterval(scoreDisplay);
+    }
+    },1000);
+
+    showQuestion();
+});
 
 
 

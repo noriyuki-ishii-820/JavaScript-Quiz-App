@@ -12,22 +12,26 @@
 
 <nav class="navbar navbar-light bg-light">
     <div class="navbar-brand">View HighScore</div>
-    <div class="navbar-brand">Time: <span class="timeScore">0</span></div>
+    <div class="navbar-brand">Time: <span id="timeScore"></span></div>
 </nav>
 
 <!-- content -->
 
 <div class="container">
+
+    <!-- intro page / dissappears once Start button is clicked-->
     <div class="row">
-        <div class="introPage col-md-12">
+        <div id="intro" class="introPage col-md-12">
             <h1>Geography Quiz Challenge</h1>
             <p>Try to answer the following questions within the time limit.</p>
-            <p>Keep in mind that incorret answers will penalize your score/time by 10 seconds!</p>
+            <p>Keep in mind that you start with 100 points, and incorret answers will penalize your score/time by 10 seconds!</p>
             <button type="button" id="start" class="startQuizButton btn btn-primary">Start the Quiz!</button>
         </div>    
     </div>
 
-
+    <!-- quiz section-->
+    <div id="quiz">
+        
 
     </div>
 
