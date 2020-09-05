@@ -9,3 +9,31 @@ psudo code:
 5. if user picks the wrong question, go to the next quiz and reduce score by 10
 6. when the score becames 0 OR user answers all 10 questions, show the score
 7. add the score into the highscore list
+
+
+#notes
+- starts with 75 seconds
+- Correct or incorrect for few seconds  = setTimeOut    1000 miliseocnds = 1 sec. 
+- if incorrect, time reduces by 20
+- store the highscore in local storage
+- Go back is to index.html
+- See Highscore is highscore.html
+- Highscore goes from top to bottom
+- 
+
+- Questions are in array with a title
+ var questions = [
+{
+    Title: "do you like JS?"
+    choices: ["yes", "no", "maybe"]
+    answer: "no";
+
+} if choice.no = answer 
+
+     
+ ]
+
+
+ - use hide to hide the intro page
+- when time = 0, stop the quiz and show the final page
+- 
