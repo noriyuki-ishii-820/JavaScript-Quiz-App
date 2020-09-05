@@ -12,7 +12,7 @@
 
 <nav class="navbar navbar-light bg-light">
     <div class="navbar-brand">View HighScore</div>
-    <div class="navbar-brand">Time: <span id="timeScore"></span></div>
+    <div id="timeScore" class="navbar-brand">Time: <span id="timeScore"></span></div>
 </nav>
 
 <!-- content -->
@@ -35,7 +35,19 @@
                     <button id="choiceC" onclick="check('C')"></button>
                     <button id="choiceD" onclick="check('D')"></button>
                 </div>
-            <div id ="results"></div> 
+        </div>
+        <div id="scoreDisplay">
+            <div id="scoreDisplayText">
+                <h2>All Done!</h2>
+                <p>Your final score is <span id="finalScore"></span>.</p>
+            </div>
+            <div id="emailSubmit">
+                <form>
+                    <label name="name">Enter Initials: </label>
+                    <input type="text" name="name">
+                    <button type="button" class="btn btn-info">Submit Your Score</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

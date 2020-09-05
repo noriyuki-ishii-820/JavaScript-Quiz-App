@@ -1,9 +1,11 @@
 //variables
 var startButton = document.getElementById("start");
 var quizQuestions = document.getElementById("quizQuestion");
-var resultsContainer = document.getElementById("results");
+var scoreDisplay = document.getElementById("scoreDisplay");
+var finalScore = document.getElementById("finalScore");
 var quizContainer = document.getElementById("quiz-container");
 var nextButton = document.getElementById("next");
+var timeScore = document.getElementById("timeScore");
 var slides = document.querySelectorAll(".slide");
 var questionIndex = 0;
 var scoreLeft = 101;
@@ -16,6 +18,7 @@ var optionD = document.getElementById("choiceD");
 
 //hide
 quizContainer.style.display="none";
+scoreDisplay.style.display="none";
 
 //start quiz
 
@@ -59,10 +62,21 @@ function beginQuiz(){
      quizContainer.style.display="block";
 }
 
+//show Results
+
+function showScore(){
+  quizContainer.style.display="none";
+  timeScore.style.display="none";
+  scoreDisplay.style.display="";
+  finalScore.textContent = scoreLeft;
+
+}
+
+
 // check whether the answer is correct
 
 function check (answer) {
-  if (questionIndex < questions.length -1 ) { // for Questions No. 1-9
+  if (questionIndex < questions.length - 1 ) { // for Questions No. 1-9
       if (answer == questions[questionIndex].correctAnswer) {
         questionIndex++;
         alert("Correct!");
@@ -85,10 +99,10 @@ function check (answer) {
             scoreLeft -= 10;
             setTimeout(getQuestion,1000);
       }
-
-  }
-
-
+    }
+   if (scoreLeft <=  0 || questionIndex == question.length) {
+      showScore();
+  };
 
 }
 
