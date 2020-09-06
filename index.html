@@ -42,9 +42,9 @@
                 <p>Your final score is <span id="finalScore"></span>.</p>
             </div>
             <div id="emailSubmit">
-                <form>
-                    <label name="name">Enter Initials: </label>
-                    <input type="text" name="name" id="userName" value="">
+                <form method="POST">
+                    <label>Enter Initials: </label>
+                    <input type="text" name="name" id="userNameInput" placeholder = "enter your initials here" />
                     <button type="submit" id="submitButton" class="btn btn-info">Submit Your Score</button>
                 </form>
             </div>
@@ -52,7 +52,7 @@
         <div id="highScore">
                 <h2>Highscores</h2>
                 <ol>
-                <li class="highscorelist"></li>
+                    <li><span id="userName"></span> : <span id="score"></span> points</li>
                 </ol>
                 <button type="button" id="goBackButton" class="btn btn-primary">Go Back</button>
                 <button type="button" id="clearHighScoreButton" class="btn btn-secondary">Clear Highscores</button>

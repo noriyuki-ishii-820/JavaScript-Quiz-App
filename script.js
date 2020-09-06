@@ -4,14 +4,16 @@ var quizQuestions = document.getElementById("quizQuestion");
 var scoreDisplay = document.getElementById("scoreDisplay");
 var quizContainer = document.getElementById("quiz-container");
 var submitScore = document.getElementById("submitButton");
-var userName = document.getElementById("userName");
-var finalScore = document.getElementById("finalScore");
 var nextButton = document.getElementById("next");
 var timeScore = document.getElementById("timeScore");
 var highScorePage = document.getElementById("highScore");
-var highScoreList = document.getElementsByClassName("highscorelist");
+var highScoreList = document.getElementsByClassName("highScorelist");
 var goBack = document.getElementById("goBackButton");
 var clearHighscore = document.getElementById("clearHighScoreButton");
+
+var userNameInput = document.getElementById("userNameInput");
+var displayUserName = document.getElementById("userName");
+var displayScore = document.getElementById("score");
 
 var questionIndex = 0;
 var scoreLeft = 5;
@@ -79,22 +81,33 @@ function showScore(){
 
 }
 
+// display name
+
+function displayName(){
+  displayUserName.textContent = userNameInput.value;
+  displayScore.textContent = scoreLeft;
+}
+
 //submit score
 
-submitScore.addEventListener("click", function() {
+submitScore.addEventListener("click", function(event) {
       event.preventDefault();
-     
+      
+      var userInfo = {
+          Initials: userName.value,
+          Score:scoreLeft,
+      };
+
       quizContainer.style.display="none";
       scoreDisplay.style.display="none";
       highScorePage.style.display="";
+      displayName();
 
-      var userNameInput = userName.value;
-      var finalScoreInput = finalScore.value;
-      
-      highScoreList.innerHTML = userNameInput + finalScoreInput;
-
-      //userName and finalScore
+     // highScoreList.textContent = userName + scoreLeft;
+      localStorage.setItem("user", JSON.stringify(userInfo));
 })
+
+
 
 // goBack.addEventListener("click", function(event){
 //   event.preventDefault();
