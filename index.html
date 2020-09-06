@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Geography Quiz App</title>
 </head>
 <body>
 <!-- Header -->
 
 <nav class="navbar navbar-light bg-light">
-    <div class="navbar-brand">View HighScore</div>
-    <div id="timeScore" class="navbar-brand">Time: <span id="timeScore"></span></div>
+    <a href="highscore.html"><div class="navbar-brand">View HighScore</div></a>
+    <div class="navbar-brand">Time: <span id="timeScore"></span></div>
 </nav>
 
 <!-- content -->
@@ -20,11 +20,12 @@
 <div class="container">
     <!-- intro page / dissappears once Start button is clicked-->
     <div class="row">
-        <div id="intro" class="introPage col-md-12">
+        <div class="introPage col-md-12 intro">
             <h1>Geography Quiz Challenge</h1>
             <p>Try to answer the following questions within the time limit.</p>
             <p>Keep in mind that you start with 100 points, and incorret answers will penalize your score/time by 10 seconds!</p>
-            <button type="button" id="start" class="startQuizButton btn btn-primary">Start the Quiz!</button>
+            <button type="button" id="start" class="btn btn-primary">Start the Quiz!</button>
+
         </div>    
     <!-- quiz section-->
         <div id="quiz-container">
@@ -36,33 +37,26 @@
                     <button id="choiceD" onclick="check('D')"></button>
                 </div>
         </div>
+    <!-- score display section-->
         <div id="scoreDisplay">
             <div id="scoreDisplayText">
                 <h2>All Done!</h2>
                 <p>Your final score is <span id="finalScore"></span>.</p>
             </div>
+
             <div id="emailSubmit">
                 <form method="POST">
                     <label>Enter Initials: </label>
-                    <input type="text" name="name" id="userNameInput" placeholder = "enter your initials here" />
-                    <button type="submit" id="submitButton" class="btn btn-info">Submit Your Score</button>
+                    <input type="text" name="name" id="userNameInput" placeholder = "enter your initials here"/>
+                    <a href="highscore.html"><button type="submit" id="submitButton" class="btn btn-info">Submit Your Score</button></a> 
+                    <!-- LINK ABOVE DOESNT WORK-->
                 </form>
             </div>
         </div>
-        <div id="highScore">
-                <h2>Highscores</h2>
-                <ol id="highScorelist">
-                <!--- <li><span id="userName"></span> : <span id="score"></span> points</li> --> 
-                </ol>
-                <button type="button" id="goBackButton" class="btn btn-primary">Go Back</button>
-                <button type="button" id="clearHighScoreButton" class="btn btn-secondary">Clear Highscores</button>
-        </div>
 
-        
     </div>
 </div>
 
-</div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
