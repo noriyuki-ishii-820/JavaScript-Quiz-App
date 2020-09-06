@@ -7,13 +7,16 @@ var submitScore = document.getElementById("submitButton");
 var nextButton = document.getElementById("next");
 var timeScore = document.getElementById("timeScore");
 var highScorePage = document.getElementById("highScore");
-var highScoreList = document.getElementsByClassName("highScorelist");
+var highScoreList = document.getElementById("highScorelist");
 var goBack = document.getElementById("goBackButton");
 var clearHighscore = document.getElementById("clearHighScoreButton");
 
 var userNameInput = document.getElementById("userNameInput");
 var displayUserName = document.getElementById("userName");
 var displayScore = document.getElementById("score");
+
+var emptyArray = [];
+var storedArray = JSON.parse(window.localStorage.getItem("highScores"));
 
 var questionIndex = 0;
 var scoreLeft = 5;
@@ -83,36 +86,55 @@ function showScore(){
 
 // display name
 
-function displayName(){
-  displayUserName.textContent = userNameInput.value;
-  displayScore.textContent = scoreLeft;
+function displayNameAndScore(){
+    scoresArray.forEach(obj => {
+        let initials = obj.initials;
+        let storedScore = obj.score;
+        let resultsP = document.createElement("li");
+        resultsP.innerText=`${initials} : ${storedScore}`;
+        highScoreList.appendChild(resultsP);
+
+
+    });
+
 }
 
 //submit score
 
+const defineScoresArray = (arr1, arr2) => {
+  if (arr1 !== null) {
+      return arr1
+  } else {
+      return arr2
+  }
+}
+
+var scoresArray = defineScoresArray(storedArray, emptyArray);
+
 submitScore.addEventListener("click", function(event) {
       event.preventDefault();
-      
+
       var userInfo = {
-          Initials: userName.value,
-          Score:scoreLeft,
+          initials: userNameInput.value,
+          score:scoreLeft,
       };
+
+      scoresArray.push(userInfo);
 
       quizContainer.style.display="none";
       scoreDisplay.style.display="none";
       highScorePage.style.display="";
-      displayName();
+      displayNameAndScore();
 
      // highScoreList.textContent = userName + scoreLeft;
-      localStorage.setItem("user", JSON.stringify(userInfo));
+      localStorage.setItem("highScores", JSON.stringify(scoresArray));
 })
 
 
-
-// goBack.addEventListener("click", function(event){
-//   event.preventDefault();
-//   window.location.reload();
-// })
+goBack.addEventListener("click", function(event){
+  event.preventDefault();
+  window.location.reload();
+})
 
 //       var scoresArray = defineScoresArray(storedArray, emptyArray);
 
