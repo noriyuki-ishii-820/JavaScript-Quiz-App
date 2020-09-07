@@ -16,7 +16,7 @@ var emptyArray = [];
 var storedArray = JSON.parse(window.localStorage.getItem("highScores"));
 
 var questionIndex = 0;
-var scoreLeft = 3;
+var scoreLeft = 101;
 
 //Question choices
 var optionA = document.getElementById("choiceA");
