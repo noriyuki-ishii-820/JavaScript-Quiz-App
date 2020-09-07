@@ -9,11 +9,12 @@
 </head>
 <body>
 <!-- Header -->
-
+<header>
 <nav class="navbar navbar-light bg-light">
     <a href="highscore.html"><div class="navbar-brand">View HighScore</div></a>
     <div class="navbar-brand">Time: <span id="timeScore"></span></div>
 </nav>
+</header>
 
 <!-- content -->
 
@@ -45,11 +46,10 @@
             </div>
 
             <div id="emailSubmit">
-                <form method="POST">
+                <form method="GET" action="highscore.html" id="submitForm">
                     <label>Enter Initials: </label>
                     <input type="text" name="name" id="userNameInput" placeholder = "enter your initials here"/>
-                    <a href="highscore.html"><button type="submit" id="submitButton" class="btn btn-info">Submit Your Score</button></a> 
-                    <!-- LINK ABOVE DOESNT WORK-->
+                    <button type="submit"  class="btn btn-info">Submit Your Score</button>
                 </form>
             </div>
         </div>

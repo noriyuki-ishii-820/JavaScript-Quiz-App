@@ -1,18 +1,12 @@
-
-// GET ERROR MESSAGE: Uncaught TypeError: Cannot read property 'addEventListener' of null at script.js:240
-
 //variables
 var startButton = document.getElementById("start");
 var quizQuestions = document.getElementById("quizQuestion");
 var scoreDisplay = document.getElementById("scoreDisplay");
 var quizContainer = document.getElementById("quiz-container");
-var submitScore = document.getElementById("submitButton");
+var submitScore = document.getElementById("submitForm");
 var nextButton = document.getElementById("next");
 var timeScore = document.getElementById("timeScore");
-var highScoreList = document.getElementById("highScorelist");
 var goBack = document.getElementById("goBackButton");
-var clearHighscore = document.getElementById("clearHighScoreButton");
-var results = document.querySelector("#listSection");
 
 var userNameInput = document.getElementById("userNameInput");
 var displayUserName = document.getElementById("userName");
@@ -40,8 +34,8 @@ const defineScoresArray = (arr1, arr2) => {
   }
 }
 
-function submitScores () {
-  // event.preventDefault();
+function submitScores (event) {
+  //event.preventDefault();
 
       //push user info to the array
       var userInfo = {
@@ -50,17 +44,8 @@ function submitScores () {
       };
 
       var scoresArray = defineScoresArray(storedArray, emptyArray);
-
       scoresArray.push(userInfo);
-      localStorage.setItem("highScores", JSON.stringify(scoresArray))
-     
-      scoresArray.forEach(obj => {
-        var initials = obj.initials;
-        var storedScore = obj.score;
-        var resultsP = document.createElement("li");
-        resultsP.innerText=`${initials} : ${storedScore}`;
-        highScoreList.appendChild(resultsP);
-    });
+      localStorage.setItem("highScores", JSON.stringify(scoresArray));
 }  
 
 
@@ -71,9 +56,6 @@ function showScore(){
   timeScore.style.display="none";
   scoreDisplay.style.display="block";
   finalScore.textContent = scoreLeft;
-
-  submitScore.addEventListener("click", submitScores);
-
 }
 
 // check answer
@@ -83,29 +65,28 @@ function check (answer) {
       if (answer == questions[questionIndex].correctAnswer) {
         questionIndex++;
         alert("Correct!");
-        setTimeout(getQuestion,1000);
+        setTimeout(1000);
       } else {
         alert("Incorrect! You lost 10 points!");
         questionIndex++;
         scoreLeft -= 10;
-        setTimeout(getQuestion,1000);
+        setTimeout(1000);
       } 
     } else {
     
     if (answer == questions[questionIndex].correctAnswer){  //for the last question
             alert("Correct!");
-            setTimeout(getQuestion,1000);
+            setTimeout(1000);
       } else {
             alert("Incorrect! You lost 10 points!");
             scoreLeft -= 10;
-            setTimeout(getQuestion,1000);
+            setTimeout(1000);
       }
     }
-    if (questionIndex == question.length) {
+    if (questionIndex == questions.length) {
       showScore();
   }
 }
-
 
 //start game
 
@@ -241,5 +222,5 @@ var questions = [
 
 //Button
   startButton.addEventListener("click", startGame);
-
+  submitScore.addEventListener("submit", submitScores);
 
