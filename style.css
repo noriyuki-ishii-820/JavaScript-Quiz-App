@@ -51,3 +51,7 @@ a {
 #submitButton{
     color:white;
 }
+
+.answerButton {
+    margin-right:10px;
+}
