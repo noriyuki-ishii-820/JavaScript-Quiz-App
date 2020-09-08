@@ -55,3 +55,8 @@ a {
 .answerButton {
     margin-right:10px;
 }
+
+#start {
+    margin-top:50px;
+    padding:20px;
+}

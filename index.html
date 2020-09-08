@@ -18,44 +18,44 @@
 
 <!-- content -->
 
-<div class="container">
+<main class="container">
     <!-- intro page / dissappears once Start button is clicked-->
     <div class="row">
-        <div class="introPage col-md-12 intro">
+        <section class="introPage col-md-12 intro">
             <h1>Geography Quiz Challenge</h1>
             <p>Try to answer the following questions within the time limit.</p>
             <p>Keep in mind that you start with 100 points, and incorret answers will penalize your score/time by 10 seconds!</p>
             <button type="button" id="start" class="btn btn-primary">Start the Quiz!</button>
 
-        </div>    
+        </section>    
     <!-- quiz section-->
-        <div id="quiz-container">
+        <section id="quiz-container">
                 <h2 id="quizQuestion"></h2>
-                <div id="choices">
+                <article id="choices">
                     <button class="btn btn-outline-dark answerButton" id="choiceA" onclick="check('A')"></button>
                     <button class="btn btn-outline-dark answerButton" id="choiceB" onclick="check('B')"></button>
                     <button class="btn btn-outline-dark answerButton" id="choiceC" onclick="check('C')"></button>
                     <button class="btn btn-outline-dark answerButton" id="choiceD" onclick="check('D')"></button>
-                </div>
-        </div>
+                </article>
+        </section>
     <!-- score display section-->
-        <div id="scoreDisplay">
-            <div id="scoreDisplayText">
+        <section id="scoreDisplay">
+            <article id="scoreDisplayText">
                 <h2>All Done!</h2>
                 <p>Your final score is <span id="finalScore"></span>.</p>
-            </div>
+            </article>
 
-            <div id="emailSubmit">
+            <article id="emailSubmit">
                 <form method="GET" action="highscore.html" id="submitForm">
                     <label>Enter Initials: </label>
                     <input type="text" name="name" id="userNameInput" placeholder = "enter your initials here"/>
                     <button type="submit"  class="btn btn-info">Submit Your Score</button>
                 </form>
-            </div>
-        </div>
+            </article>
+        </section>
 
     </div>
-</div>
+</main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
