@@ -65,22 +65,22 @@ function check (answer) {
       if (answer == questions[questionIndex].correctAnswer) {
         questionIndex++;
         alert("Correct!");
-        setTimeout(1000);
+        setTimeout(nextQuestion, 500);
       } else {
         alert("Incorrect! You lost 10 points!");
         questionIndex++;
         scoreLeft -= 10;
-        setTimeout(1000);
+        setTimeout(nextQuestion, 500);
       } 
     } else {
     
     if (answer == questions[questionIndex].correctAnswer){  //for the last question
             alert("Correct!");
-            setTimeout(1000);
+            setTimeout(showScore, 500);
       } else {
             alert("Incorrect! You lost 10 points!");
             scoreLeft -= 10;
-            setTimeout(1000);
+            setTimeout(showScore, 500);
       }
     }
     if (questionIndex == questions.length) {
@@ -89,6 +89,21 @@ function check (answer) {
 }
 
 //start game
+
+function nextQuestion() {
+  startButton.style.display = "none";
+  quizContainer.style.display="block";
+ 
+   //show questions
+
+  let q = questions[questionIndex];
+  quizQuestions.innerHTML = "<p>Question " + (questionIndex+1) + ":" + q.question + "</p>";
+  optionA.innerHTML = q.choiceA;
+  optionB.innerHTML = q.choiceB;
+  optionC.innerHTML = q.choiceC;
+  optionD.innerHTML = q.choiceD;
+  choices.style.display = "block";
+}
 
 function startGame(){
   quizContainer.style.display="";
@@ -107,22 +122,9 @@ function startGame(){
       timeScore.style.color = "red";
     }
   }, 1000);  
- 
-     startButton.style.display = "none";
-     quizContainer.style.display="block";
-    
-      //show questions
-
-     let q = questions[questionIndex];
-     quizQuestions.innerHTML = "<p>Question " + (questionIndex+1) + ":" + q.question + "</p>";
-     optionA.innerHTML = q.choiceA;
-     optionB.innerHTML = q.choiceB;
-     optionC.innerHTML = q.choiceC;
-     optionD.innerHTML = q.choiceD;
-     choices.style.display = "block";
+    nextQuestion();
 }
-
-
+ 
 
 
 
