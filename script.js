@@ -7,6 +7,8 @@ var submitScore = document.getElementById("submitForm");
 var nextButton = document.getElementById("next");
 var timeScore = document.getElementById("timeScore");
 var goBack = document.getElementById("goBackButton");
+var quizImage = document.getElementById("quizImage");
+var img = document.createElement("img");
 
 var userNameInput = document.getElementById("userNameInput");
 var displayUserName = document.getElementById("userName");
@@ -98,6 +100,8 @@ function nextQuestion() {
 
   let q = questions[questionIndex];
   quizQuestions.innerHTML = "<p>Question " + (questionIndex+1) + ":" + q.question + "</p>";
+  img.src = q.image;
+  quizImage.appendChild(img);
   optionA.innerHTML = q.choiceA;
   optionB.innerHTML = q.choiceB;
   optionC.innerHTML = q.choiceC;
@@ -133,6 +137,7 @@ function startGame(){
 var questions = [
   {
     question: "What is the capital of Australia?",
+    image:'images/Australia.png',
     choiceA: "Sydney",
     choiceB: "Melbourne",
     choiceC: "Perth",
@@ -142,6 +147,7 @@ var questions = [
 
   {
     question: "What is the capital of the United States?",
+    image:'images/usa.png',
     choiceA: "Los Angeles",
     choiceB: "New York",
     choiceC: "Washington",
@@ -151,6 +157,7 @@ var questions = [
 
   {
     question: "What is the capital of Germany?",
+    image:'images/Germany.png',
     choiceA: "Munich",
     choiceB: "Frankfurt",
     choiceC: "Berlin",
@@ -160,6 +167,7 @@ var questions = [
 
   {
     question: "What is the capital of New Zealand?",
+      image:'images/nz.png',
       choiceA: "Auckland",
       choiceB: "Christchurch",
       choiceC: "Queenstown",
@@ -169,6 +177,7 @@ var questions = [
 
   {
     question: "What is the capital of Japan?",
+    image:'images/Japan.png',
       choiceA: "Fukuoka",
       choiceB: "Tokyo",
       choiceC: "Osaka",
@@ -179,6 +188,7 @@ var questions = [
 
   {
     question: "What is the capital of the Philippines?",
+    image:'images/ph.png',
       choiceA: "Bangkok",
       choiceB: "Jakarta",
       choiceC: "Manila",
@@ -187,6 +197,7 @@ var questions = [
   },
   {
     question: "What is the capital of the Egypt?",
+    image:'images/Egypt.png',
       choiceA: "Cairo",
       choiceB: "Capetown",
       choiceC: "Prague",
@@ -196,6 +207,7 @@ var questions = [
 
   {
     question: "Which of the following country is an island?",
+    image:'images/island.png',
       choiceA: "Bangladesh",
       choiceB: "Panama",
       choiceC: "Israel",
@@ -205,6 +217,7 @@ var questions = [
 
   {
     question: "Which of the following country has the largest population?",
+    image:'images/population.png',
       choiceA: "Nigeria",
       choiceB: "Germany",
       choiceC: "Australia",
@@ -214,6 +227,7 @@ var questions = [
 
   {
     question: "Which of the following country does not have red in its flag?",
+    image:'images/red.png',
       choiceA: "Barbados",
       choiceB: "Trinidad and Tobago",
       choiceC: "Spain",
