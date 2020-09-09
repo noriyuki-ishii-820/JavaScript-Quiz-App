@@ -43,7 +43,7 @@ THEN I can save my initials and score
 
 
 ## personal notes
-- starts with 75 seconds
+- starts with 100 seconds
 - Correct or incorrect for few seconds  = setTimeOut    1000 miliseocnds = 1 sec. 
 - if incorrect, time reduces by 20
 - store the highscore in local storage
