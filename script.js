@@ -226,7 +226,7 @@ var questions = [
   },
 
   {
-    question: "Which of the following country does not have red in its flag?",
+    question: "Which of the following country does NOT have red in its flag?",
     image:'images/red.png',
       choiceA: "Barbados",
       choiceB: "Trinidad and Tobago",
