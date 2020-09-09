@@ -4,9 +4,8 @@ body {
 }
 
 .container {
-    margin:auto 5px;
-    
-
+    margin:auto;
+    width: 95%;
 }
 
 h1 {
