@@ -6,7 +6,7 @@ This application is a combination of multiple-choice questions and interactive c
 
 ## Screenshots
 
-![](url:screen1.png);
+![](screen1.png);
 
 ## Tech used
 
