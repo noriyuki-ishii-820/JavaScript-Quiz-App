@@ -7,15 +7,19 @@ This app will run in the browser and feature dynamically updated HTML and CSS po
 ## Screenshots
 
 Screenshot1) opening
+
 ![](screen1.png)
 
 Screenshot2) Once the user clicks the start button, the game starts. 
+
 ![](screen2.png)
 
 Screenshot3) At the end of the game, the user gets to submit the final score with his/her initials.
+
 ![](screen3.png)
 
 Screenshot4) Highscore gets on the list. 
+
 ![](screen4.png)
 
 
