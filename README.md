@@ -13,7 +13,7 @@ This application is a combination of multiple-choice questions and interactive c
 
 ## Deployment
 
-https://noriyuki-ishii-820.github.io/usyd-bootcamp-Week4-Homework-Noriyuki-Ishii/
+https://noriyuki-ishii-820.github.io/JavaScript-Quiz-App/
 
 ## Acceptance Criteria
 
