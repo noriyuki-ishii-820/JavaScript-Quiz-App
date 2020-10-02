@@ -39,4 +39,4 @@ https://noriyuki-ishii-820.github.io/JavaScript-Quiz-App/
 MIT 
 
 ## Contact 
-send me a message via linkedin: https://www.linkedin.com/in/ishiinoriyuki/
+email me at nishii.dev.syd@gmail.com
