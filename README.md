@@ -1,5 +1,3 @@
-# usyd-bootcamp-Week4-Homework-Noriyuki-Ishii
-
 ## JavaScript Quiz App
 
 This application is a combination of multiple-choice questions and interactive challenges. I have built a timed code quiz with multiple-choice questions. Once the game starts, the time (which is the score) goes down by 1 point every second. Every time the user gets the incorrect choice, the score decreases by 10. The game is to complete all the questions with higher scores (i.e. less incorrect choices, higher the score.)
