@@ -4,6 +4,10 @@
 
 This application is a combination of multiple-choice questions and interactive challenges. I have built a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by JavaScript code. It will also feature a clean and polished user interface and be responsive powered by Bootstrap, ensuring that it adapts to multiple screen sizes.
 
+## Screenshots
+
+![](url:screen1.png);
+
 ## Tech used
 
 - HTML
